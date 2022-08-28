@@ -71,11 +71,11 @@
 	};
 </script>
 
-<main class="page">
+<main class="page" transition:fade={{ duration: 200 }}>
 	<Alert msg={msgAlert} {openAlert} />
 	<Loading {isLoading} {msgLoading} />
 	<div class="container-fluid">
-		<div class="page__card" transition:fade={{ duration: 200 }}>
+		<div class="page__card">
 			<h1 class="text-h1">Encurtador de URL</h1>
 			<div class="form-input">
 				<label for="url-origin">URL original:</label>

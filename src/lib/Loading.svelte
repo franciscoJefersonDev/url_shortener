@@ -5,7 +5,7 @@
 </script>
 
 {#if isLoading}
-	<main class="load">
+	<main class="load" transition:fade={{ duration: 200 }}>
 		<div class="load__container">
 			<div class="load-circle" />
 			<div class="load-circle" />

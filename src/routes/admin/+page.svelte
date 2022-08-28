@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import axios from 'axios';
 	import Loading from '../../lib/Loading.svelte';
@@ -101,7 +101,7 @@
 	};
 </script>
 
-<main class="page">
+<main class="page" transition:fade={{ duration: 200 }}>
 	<Loading {isLoading} {msgLoading} />
 	<Alert {openAlert} msg={msgAlert} />
 	{#if isLoaded}
@@ -131,7 +131,7 @@
 				</div>
 			{/if}
 			{#each searchURLs as url}
-				<li class="page__content__card" transition:fade={{ duration: 200 }}>
+				<li class="page__content__card" in:fly={{ y: -200, duration: 200 }} out:fade>
 					<div class="container flex-column">
 						<label for="originURL">URL Original:</label>
 						<input
